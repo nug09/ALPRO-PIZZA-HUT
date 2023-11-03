@@ -1,0 +1,46 @@
+#fungsi if untuk harga pizza dengan pinggiran crown crust dan juga harga per ukurannya 
+    else:
+        hargacrust = 55455 #untuk harga pizza dengan pinggiran crust Crown Crust
+        if ukuran == 1:
+            hargaukuran= 0 #harga jika ukuran personal
+        elif ukuran == 2:
+            hargaukuran = 65455 #harga jika ukuran regular
+        else:
+            hargaukuran = 104545 #harga jika ukuran large
+    
+            
+    #fungsi if untuk jika pelanggan ingin menambahkan Extra Cheese beserta harga per ukuran pizza
+    if xtracheese == "Y":
+        xtracheese = "Dengan Tambahan Extra Cheese"
+        if ukuran == 1:
+                harga += 13636 #harga jika ukuran personal
+        elif ukuran == 2:
+                harga = 16364 #harga jika ukuran regular
+        elif ukuran ==3:
+                 harga = 19091 #harga jika ukuran large
+    else:
+          xtracheese = "Tanpa Tambahan Extra Cheese"
+
+     
+    #deklarasi perhitungan total harga
+    total_harga = harga + hargacrust + hargaukuran + harga_xtracheese 
+    
+    pesanan_pizza.append({
+        "Topping": nama_topping,
+        "Crust": nama_crust,
+        "Ukuran": nama_ukuran,
+        "Extra Cheese": xtracheese,
+        "Total Harga": total_harga
+    })
+total_harga_semua_pesanan = sum(pesanan["Total Harga"] for pesanan in pesanan_pizza)
+
+#print tampilan bill
+print("========================================================")
+print("-----------Pesanan Anda----------")
+print(f"Topping : {nama_topping}") #menampilkan nama topping yang dipilih
+print(f"Crust : {nama_crust}") #menampilkan nama crust yang dipilih
+print(f"Ukuran : {nama_ukuran}") #menampilkan nama ukuran yang dipilih
+print(xtracheese) #menampilkan hasil apakah user menambahkan Extra Cheese atau tidak
+print("_________________________________")
+print("Total Harga = Rp. {:,.2f}".format(total_harga_semua_pesanan)) #menampilkan harga total
+print("Terima Kasih Atas Kunjungan Anda")
